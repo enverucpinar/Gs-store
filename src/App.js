@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Router, Routes } from "react-router-dom";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import TeamList from "./components/TeamList";
+import Store from "./components/Store";
+import Favoriler from "./components/Favoriler";
+import Sepet from "./components/Sepet";
+import Anasayfa from "./components/Anasayfa";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+
+      <Routes>
+        <Route path="/anasayfa" element={<Anasayfa />} />
+        <Route path="/takimlistesi" element={<TeamList />} />
+        <Route path="/store" element={<Store />} />
+        <Route path="/favoriler" element={<Favoriler />} />
+        <Route path="/sepetim" element={<Sepet />} />
+
+        <Route />
+      </Routes>
     </div>
   );
 }
